@@ -7,13 +7,34 @@
 
 .app {
   height: 100%;
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('./images/city.jpg');
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) );
   background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  flex-direction:column;
+}
+
+.fees-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  
+}
+
+.fees_form__div{
+  display: flex;
+}
+
+.fees-form__label{
+
+  font-size:larger;
+  padding: 2%;
+  margin: 3%;
+  display: flex;
 }
 
 .card {
