@@ -1,26 +1,34 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import './App.css';
-
+import OptionButton from './Option.js';
 var json = require('./data.json');
 
 const App=()=> {
   
-  var arr=[];
+  
   var calculatedFees = 0 ;
-  const [predictedFees, setPredictedFees] = useState(arr);
+  const [predictedFees, setPredictedFees] = useState([]);
   console.log(json);
   console.log("hila dlaana");
   var data =json;
   
 
+  var feesKeys = [];
+  var nationalitiesKeys=[]
+  var coursesKeys = ["Medical", "Dentist", "Ayurveda"];
+  var levelKeys = [];
 
-var count = 0;
-for(var key in json)
-    if(json.hasOwnProperty(key))
-        count++;
+  var feeskeys = Object.keys(json);
+  console.log(feeskeys);
+  let value = "Exam Fee";
+  var feesObj = json.value;
+  console.log(feesObj);
+  console.log(value);
 
-console.log(count); 
+  // nationalitiesKeys = Object.keys(json.value);
+  // console.log(nationalitiesKeys)
+  // console.log("oajlbnck");
   // componentDidMount() {
   //   this.fetchAdvice();
   // }
@@ -37,12 +45,10 @@ console.log(count);
   //     });
   // }
 
-  const feesOption=()=>{
-      return{
-        // `<option value="volvo">Volvo</option>`
-      }
-  }
-  
+
+    console.log("hila la na")
+
+
     return (
       <div className="app">
         {/* <div className="card">
@@ -52,17 +58,10 @@ console.log(count);
           </button>
         </div> */}
 
-
+        
         <form className="fees-form">
-
           <label className="fees-form__label" >Fees:     
-          <select name="fees" id="fees">
-            
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-          </select>
+          <input className="input" type = "number" placeholder ="Enter Fees" />
           </label>
 
           <label className="fees-form__label">Nationality: 
