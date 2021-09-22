@@ -3,7 +3,6 @@ import Nationality from "./Nationality";
 import Courses from "./Courses";
 import Level from "./Level";
 import React, { useState } from "react";
-import axios from "axios";
 import "./App.css";
 var json = require("./data.json");
 
@@ -13,7 +12,6 @@ const App = () => {
   const [selectedCoursevalue, setSelectedCoursevalue] = useState("");
   const [selectedLevelvalue, setSelectedLevelvalue] = useState("");
 
-  var data = json;
 
   var feestypeKeys = [];
   var nationalitiesKeys = [];

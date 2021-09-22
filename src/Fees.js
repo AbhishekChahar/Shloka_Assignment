@@ -5,13 +5,19 @@ var data = require("./data.json");
 
 const Fees = () => {
     
-  const [selectedfeesvalue, setSelectedfeesvalue] = useState("");
+  const [selectedfeesvalue, setSelectedfeesvalue] = useState('');
 
     var feesvalues = Object.keys(data);
+    // var feesvalues = [];
 
     const getfeesvalue = (e) => {
+      e.preventDefault();
         setSelectedfeesvalue(e.target.value);
-        // console.log(selectedfeesvalue);
+
+        console.log("sfcnl");
+        console.log(e.target.value);
+        console.log(selectedfeesvalue);
+        console.log("vsbdjlnc");
 
     };
     
@@ -23,8 +29,8 @@ const Fees = () => {
           feesvalues.map((comment) => {
             return (
               <div   style={{ alignItems: "center", margin: "5px 20px" }}>
-                <button className="btn btn-primary" id="button" onClick={getfeesvalue}>
-                  <h4>{comment}</h4>
+                <button className="btn btn-primary" value = {comment} id="button" onClick={getfeesvalue}>
+                  {comment}
                 </button>
               </div>
             );

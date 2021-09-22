@@ -13,8 +13,7 @@ const Nationality = () => {
         console.log(selectedNationalityvalue);
     };
     var nationalityKeys  = Object.keys(data["Exam Fee"]);
-    // console.log(nationalityKeys);
-    // console.log("hala hu hala");
+    
     return (
     <>
       <label className="fees-form__label">
