@@ -18,7 +18,7 @@ const Fees = () => {
     return (
     <>
       <label className="fees-form__label">
-        Fees:
+        <div>Fees:</div>
         { feesvalues &&
           feesvalues.map((comment) => {
             return (

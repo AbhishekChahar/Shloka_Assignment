@@ -1,7 +1,7 @@
 import Fees from "./Fees";
-import Nationality from './Nationality';
-import Courses from './Courses';
-import Level from './Level';
+import Nationality from "./Nationality";
+import Courses from "./Courses";
+import Level from "./Level";
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
@@ -12,7 +12,6 @@ const App = () => {
   const [selectednationalityvalue, setSelectednationalityvalue] = useState("");
   const [selectedCoursevalue, setSelectedCoursevalue] = useState("");
   const [selectedLevelvalue, setSelectedLevelvalue] = useState("");
-
 
   var data = json;
 
@@ -56,8 +55,6 @@ const App = () => {
   //     });
   // }
 
-
-
   const getnationalityvalue = (e) => {
     setSelectednationalityvalue(e.target.value);
     console.log();
@@ -74,28 +71,24 @@ const App = () => {
         </div> */}
 
       <form className="fees-form">
-      <label className="fees-form__label">
-          <Fees/>
-     
+        <label className="fees-form__label">
+          <Fees />
         </label>
 
         <label className="fees-form__label">
-          <Nationality/>
-     
+          <Nationality />
         </label>
 
         <label className="fees-form__label">
-      
-          <Courses/>
+          <Courses />
         </label>
 
         <label className="fees-form__label">
-     
-          <Level/>
+          <Level />
         </label>
       </form>
 
-      <h1> Your Fees is : {calculatedFees}</h1>
+      <h1> Your Fees is : <span className="fees-form__span">{calculatedFees}</span></h1>
     </div>
   );
 };

@@ -22,19 +22,27 @@
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  
+  width: 40% ;  
 }
 
 .fees_form__div{
   display: flex;
 }
 
+.fees-form__span{
+  font-weight: bold;
+}
+
 .fees-form__label{
 
   font-size:larger;
+  font-weight: bold;
   padding: 1%;
   margin: 1%;
   display: flex;
+
+  border-radius: 2%;
+  background-color: aquamarine;
 }
 
 .card {
