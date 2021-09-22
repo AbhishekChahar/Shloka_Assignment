@@ -22,7 +22,7 @@ const Level = () => {
         { 
           LevelKey.map((comment) => {
             return (
-              <div  style={{ alignItems: "center", margin: "20px 20px" }}>
+              <div  style={{ alignItems: "center", margin: "5px 20px" }}>
                 <button className="btn btn-primary" id="button" value={comment} onClick={getLevelvalue}>
                   <h4>{comment}</h4>
                 </button>

@@ -22,7 +22,7 @@ const Nationality = () => {
         { nationalityKeys &&
           nationalityKeys.map((comment) => {
             return (
-              <div  style={{ alignItems: "center", margin: "20px 20px" }}>
+              <div  style={{ alignItems: "center", margin: "5px 20px" }}>
                 <button className="btn btn-primary" id="button" value={comment} onClick={getNationalityvalue}>
                   <h4>{comment}</h4>
                 </button>

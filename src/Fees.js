@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import './App.css';
 var data = require("./data.json");
 
 
@@ -11,6 +12,7 @@ const Fees = () => {
     const getfeesvalue = (e) => {
         setSelectedfeesvalue(e.target.value);
         // console.log(selectedfeesvalue);
+
     };
     
     return (
@@ -20,7 +22,7 @@ const Fees = () => {
         { feesvalues &&
           feesvalues.map((comment) => {
             return (
-              <div   style={{ alignItems: "center", margin: "20px 20px" }}>
+              <div   style={{ alignItems: "center", margin: "5px 20px" }}>
                 <button className="btn btn-primary" id="button" onClick={getfeesvalue}>
                   <h4>{comment}</h4>
                 </button>
