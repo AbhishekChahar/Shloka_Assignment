@@ -77,30 +77,22 @@ const App = () => {
         <Fees/>
 
         <label className="fees-form__label">
-          Nationality:
-          {/* <Option value = "Indian"/>
-          <Option value = "Foreigner"/>
-          <Option value = "NRI"/>
-          <Option value = "SAARC"/> */}
+          <Nationality/>
      
         </label>
 
         <label className="fees-form__label">
-          Courses:
-          {/* <Option value = "Medical"/>
-          <Option value = "Ayurveda"/>
-          <Option value = "Dental"/> */}
+      
+          <Courses/>
         </label>
 
         <label className="fees-form__label">
-          Levels:
-          {/* <Option value = "UG"/>
-          <Option value = "UGD"/>
-          <Option value = "PG"/> */}
+     
+          <Level/>
         </label>
       </form>
 
-      <p> Your Fees is : {calculatedFees}</p>
+      <h1> Your Fees is : {calculatedFees}</h1>
     </div>
   );
 };

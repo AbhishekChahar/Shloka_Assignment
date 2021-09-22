@@ -20,8 +20,8 @@ const Fees = () => {
         { feesvalues &&
           feesvalues.map((comment) => {
             return (
-              <div style={{ alignItems: "center", margin: "20px 60px" }}>
-                <button id="button" value={comment} onClick={getfeesvalue}>
+              <div   style={{ alignItems: "center", margin: "20px 20px" }}>
+                <button className="btn btn-primary" id="button" value={comment} onClick={getfeesvalue}>
                   <h4>{comment}</h4>
                 </button>
               </div>

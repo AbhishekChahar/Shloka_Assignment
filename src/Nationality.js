@@ -12,16 +12,18 @@ const Nationality = () => {
         setSelectedNationalityvalue(e.target.value);
         console.log(selectedNationalityvalue);
     };
-    
+    var nationalityKeys  = Object.keys(data["Exam Fee"]);
+    console.log(nationalityKeys);
+    console.log("hala hu hala");
     return (
     <>
       <label className="fees-form__label">
         Nationality:
-        { data["Exam Fee"] &&
-          data["Exam Fee"].map((comment) => {
+        { nationalityKeys &&
+          nationalityKeys.map((comment) => {
             return (
-              <div style={{ alignItems: "center", margin: "20px 60px" }}>
-                <button id="button" value={comment} onClick={getNationalityvalue}>
+              <div  style={{ alignItems: "center", margin: "20px 20px" }}>
+                <button className="btn btn-primary" id="button" value={comment} onClick={getNationalityvalue}>
                   <h4>{comment}</h4>
                 </button>
               </div>
