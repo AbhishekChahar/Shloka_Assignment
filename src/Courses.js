@@ -13,7 +13,7 @@ const Courses = () => {
         console.log(selectedCoursesvalue);
     };
     var coursesKey  = ["Medical", "Dentist", "Ayurveda"];
-    console.log(coursesKey);
+    // console.log(coursesKey);
 
     return (
     <>

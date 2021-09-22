@@ -74,7 +74,10 @@ const App = () => {
         </div> */}
 
       <form className="fees-form">
-        <Fees/>
+      <label className="fees-form__label">
+          <Fees/>
+     
+        </label>
 
         <label className="fees-form__label">
           <Nationality/>

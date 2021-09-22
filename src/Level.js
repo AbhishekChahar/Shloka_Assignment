@@ -10,10 +10,10 @@ const Level = () => {
 
     const getLevelvalue = (e) => {
         setSelectedLevelvalue(e.target.value);
-        console.log(selectedLevelvalue);
+        // console.log(selectedLevelvalue);
     };
     var LevelKey  = ["UG" ,"UGD","PG"];
-    console.log(LevelKey);
+    // console.log(LevelKey);
 
     return (
     <>
