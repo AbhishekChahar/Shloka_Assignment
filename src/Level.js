@@ -1,34 +1,36 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 // var data = require("./data.json");
 
-
 const Level = () => {
-    
   const [selectedLevelvalue, setSelectedLevelvalue] = useState("");
 
-    // var Levelvalues = Object.keys(data);
+  const getLevelvalue = (e) => {
+    e.preventDefault();
 
-    const getLevelvalue = (e) => {
-        setSelectedLevelvalue(e.target.value);
-        // console.log(selectedLevelvalue);
-    };
-    var LevelKey  = ["UG" ,"UGD","PG"];
-    // console.log(LevelKey);
+    setSelectedLevelvalue(e.target.value);
+    console.log(e.target.value);
+  };
+  var LevelKey = ["UG", "UGD", "PG"];
 
-    return (
+  return (
     <>
       <label className="fees-form__label">
         Level:
-        { 
-          LevelKey.map((comment) => {
-            return (
-              <div  style={{ alignItems: "center", margin: "5px 20px" }}>
-                <button className="btn btn-primary" id="button" value={comment} onClick={getLevelvalue}>
-                  <h4>{comment}</h4>
-                </button>
-              </div>
-            );
-          })}
+        {LevelKey.map((comment) => {
+          return (
+            <div style={{ alignItems: "center", margin: "5px 20px" }}>
+              <button
+                className="btn btn-primary btn-lg active"
+                id="button"
+                value={comment}
+                onClick={getLevelvalue}
+              >
+                {comment}
+              </button>
+            </div>
+          );
+        })}
+        <div>{selectedLevelvalue}</div>
       </label>
     </>
   );

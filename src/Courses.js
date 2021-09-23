@@ -9,6 +9,8 @@ const Courses = () => {
     // var Coursesvalues = Object.keys(data);
 
     const getCoursesvalue = (e) => {
+      e.preventDefault();
+
         setSelectedCoursesvalue(e.target.value);
         console.log(selectedCoursesvalue);
     };
@@ -23,12 +25,14 @@ const Courses = () => {
           coursesKey.map((comment) => {
             return (
               <div style={{ alignItems: "center", margin: "5px 20px" }}>
-                <button className="btn btn-primary"id="button" value={comment} onClick={getCoursesvalue}>
-                  <h4>{comment}</h4>
+                <button className="btn btn-primary btn-lg active"id="button" value={comment} onClick={getCoursesvalue}>
+                 {comment}
                 </button>
               </div>
             );
           })}
+          <div>{selectedCoursesvalue}</div>
+
       </label>
     </>
   );
