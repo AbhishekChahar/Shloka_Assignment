@@ -4,9 +4,14 @@ STEP 1-> Clone the project
 STEP 2-> Run npm i .
 STEP 3-> npm run start
 
+![flowchart](https://user-images.githubusercontent.com/37897749/134593405-55dd30ac-878a-4daa-be64-577c2c7cc6a4.png)
 
 
-# Getting Started with Create React App
+![ShlokaAssignment](https://user-images.githubusercontent.com/37897749/134593378-81508ed1-0fd0-4d8f-962a-97bf8f99c970.png)
+
+
+# Getting Started with Create![flowchart]
+ React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
