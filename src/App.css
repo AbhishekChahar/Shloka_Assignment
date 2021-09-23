@@ -23,7 +23,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  width: 40% ;  
+  width: 60% ;  
 }
 
 .fees-form__label{
@@ -47,6 +47,17 @@
 
 .fees-form__span{
   font-weight: bold;
+  
 }
 
+.selected-option{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  color:green;
+}
 
+.btn{
+  border-radius: 5px 15px;
+}

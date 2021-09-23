@@ -2,22 +2,22 @@
 // import Nationality from "./Nationality";
 // import Courses from "./Courses";
 // import Level from "./Level";
-import React, { useContext, useState , useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./App.css";
 var data = require("./data.json");
 
 const App = () => {
   var calculatedFees = 0;
 
-  const [selectedfeesvalue, setSelectedfeesvalue] = useState("Application Fee");
+  const [selectedfeesvalue, setSelectedfeesvalue] = useState("Exam Fee");
   const [selectedNationalityvalue, setSelectedNationalityvalue] = useState("");
   const [selectedCoursesvalue, setSelectedCoursesvalue] = useState("");
   const [selectedLevelvalue, setSelectedLevelvalue] = useState("");
 
-  const [calculatedfees ,setCalculatedfees] = useState(0);
+  const [calculatedfees, setCalculatedfees] = useState(0);
 
   let feesvalues = Object.keys(data);
-  var nationalitykeys=Object.keys(data[selectedfeesvalue]);
+  var nationalitykeys = Object.keys(data[selectedfeesvalue]);
 
   const getFeesvalue = (e) => {
     e.preventDefault(); //
@@ -25,7 +25,7 @@ const App = () => {
     console.log(e.target.value);
     calculate();
   };
-  
+
   const getNationalityvalue = (e) => {
     e.preventDefault();
     setSelectedNationalityvalue(e.target.value);
@@ -33,7 +33,6 @@ const App = () => {
     calculate();
   };
 
-  
   var coursesKey = ["Medical", "Dentist", "Ayurveda"];
 
   const getCoursesvalue = (e) => {
@@ -43,53 +42,54 @@ const App = () => {
     calculate();
   };
 
-
   var LevelKey = ["UG", "UG-DIPLOMA", "PG"];
 
-    const getLevelvalue = (e) => {
-      e.preventDefault();
-  
-      setSelectedLevelvalue(e.target.value);
-      console.log(e.target.value);
-      calculate();
+  const getLevelvalue = (e) => {
+    e.preventDefault();
+
+    setSelectedLevelvalue(e.target.value);
+    console.log(e.target.value);
+    calculate();
   };
 
-  function calculate(){
+  function calculate() {
     console.log("chal chala");
 
     var course = "";
     var level = "";
 
-    if(selectedfeesvalue != "" && selectedNationalityvalue != "" && selectedCoursesvalue != "" && selectedCoursesvalue != "" ){
-      
-      if(coursesKey.indexOf(selectedCoursesvalue) != -1){
+    if (
+      selectedfeesvalue !== "" &&
+      selectedNationalityvalue !== "" &&
+      selectedCoursesvalue !== "" &&
+      selectedCoursesvalue !== ""
+    ) {
+      if (coursesKey.indexOf(selectedCoursesvalue) !== -1) {
         course = "ALL_COURSES";
-        console.log("value of course changes" + {course});
-      }{
-
-        if(selectedfeesvalue == "Exam Fee" && selectedCoursesvalue != ""){
-          level = "ALL_LEVEL";
-          console.log("value of Level changes" + {level});
-
-        }else{
-          level = selectedLevelvalue;
-        }
-        if(selectedfeesvalue == "Application Fee"){
-          level = selectedLevelvalue;
-        }
-
-        setCalculatedfees(data[selectedfeesvalue][selectedNationalityvalue][course][level].amount);
-        console.log(calculatedFees); 
-        return calculatedFees;
+        console.log("value of course changes" + { course });
       }
+
+      if (selectedfeesvalue === "Exam Fee" && selectedCoursesvalue !== "") {
+        level = "ALL_LEVEL";
+        console.log("value of Level changes" + { level });
+      } else {
+        level = selectedLevelvalue;
+      }
+      if (selectedfeesvalue === "Application Fee") {
+        level = selectedLevelvalue;
+      }
+
+      setCalculatedfees(
+        data[selectedfeesvalue][selectedNationalityvalue][course][level].amount
+      );
+      console.log(calculatedFees);
+      return calculatedFees;
     }
   }
 
   // useEffect(() => {
   //     nationalitykeys = Object.keys(data[setSelectedfeesvalue]);
   // },[]);
-
-
 
   return (
     <div className="app">
@@ -111,7 +111,7 @@ const App = () => {
                 </div>
               );
             })}
-          <div>{selectedfeesvalue}</div>
+          <div className="selected-option">{selectedfeesvalue}</div>
         </label>
 
         <label className="fees-form__label">
@@ -131,7 +131,7 @@ const App = () => {
                 </div>
               );
             })}
-          <div>{selectedNationalityvalue}</div>
+          <div className="selected-option">{selectedNationalityvalue}</div>
         </label>
 
         <label className="fees-form__label">
@@ -151,7 +151,7 @@ const App = () => {
               </div>
             );
           })}
-          <div>{selectedCoursesvalue}</div>
+          <div className="selected-option">{selectedCoursesvalue}</div>
         </label>
 
         <label className="fees-form__label">
@@ -171,7 +171,7 @@ const App = () => {
               </div>
             );
           })}
-          <div>{selectedLevelvalue}</div>
+          <div className="selected-option">{selectedLevelvalue}</div>
         </label>
       </form>
 
