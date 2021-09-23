@@ -9,7 +9,7 @@ const Fees = () => {
   var feesvalues = Object.keys(data);
 
   const getfeesvalue = (e) => {
-    e.preventDefault();
+    e.preventDefault();// 
     setSelectedfeesvalue(e.target.value);
     console.log(e.target.value);
     
@@ -18,7 +18,7 @@ const Fees = () => {
   return (
     <>
       <label className="fees-form__label">
-        <div>Fees:</div>
+        <div className = "fees-form__label_div">Fees:</div>
         {feesvalues &&
           feesvalues.map((comment) => {
             return (

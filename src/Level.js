@@ -15,7 +15,8 @@ const Level = () => {
   return (
     <>
       <label className="fees-form__label">
-        Level:
+        <div className="fees-form__label_div">Level:</div>
+
         {LevelKey.map((comment) => {
           return (
             <div style={{ alignItems: "center", margin: "5px 20px" }}>

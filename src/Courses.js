@@ -20,7 +20,8 @@ const Courses = () => {
     return (
     <>
       <label className="fees-form__label">
-        Courses:
+        <div className = "fees-form__label_div">Courses:</div>
+        
         { 
           coursesKey.map((comment) => {
             return (

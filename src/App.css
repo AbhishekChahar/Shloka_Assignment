@@ -3,6 +3,7 @@
   padding: 0;
   height: 100vh;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 .app {
@@ -43,6 +44,11 @@
 
   border-radius: 2%;
   
+}
+
+.fees-form__label_div{
+  display: flex;
+  align-items: center;
 }
 
 .card {
