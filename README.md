@@ -1,3 +1,11 @@
+IN short
+
+STEP 1-> Clone the project
+STEP 2-> Run npm i .
+STEP 3-> npm run start
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
