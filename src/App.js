@@ -22,6 +22,11 @@ const App = () => {
   const getFeesvalue = (e) => {
     e.preventDefault(); //
     setSelectedfeesvalue(e.target.value);
+    setSelectedNationalityvalue("");
+    setSelectedCoursesvalue("");
+    setSelectedLevelvalue("");
+
+    
     console.log(e.target.value);
     calculate();
   };
@@ -29,6 +34,9 @@ const App = () => {
   const getNationalityvalue = (e) => {
     e.preventDefault();
     setSelectedNationalityvalue(e.target.value);
+    setSelectedCoursesvalue("");
+    setSelectedLevelvalue("");
+
     console.log(e.target.value);
     calculate();
   };
@@ -38,6 +46,8 @@ const App = () => {
   const getCoursesvalue = (e) => {
     e.preventDefault();
     setSelectedCoursesvalue(e.target.value);
+    setSelectedLevelvalue("");
+
     console.log(e.target.value);
     calculate();
   };
@@ -55,8 +65,8 @@ const App = () => {
   function calculate() {
     console.log("chal chala");
 
-    var course = "";
-    var level = "";
+    var course = "ALL_COURSES";
+    var level = "ALL_LEVEL";
 
     if (
       selectedfeesvalue !== "" &&
@@ -64,24 +74,50 @@ const App = () => {
       selectedCoursesvalue !== "" &&
       selectedCoursesvalue !== ""
     ) {
-      if (coursesKey.indexOf(selectedCoursesvalue) !== -1) {
-        course = "ALL_COURSES";
-        console.log("value of course changes" + { course });
-      }
+      // if (coursesKey.indexOf(selectedCoursesvalue) !== -1) {
+      //   course = "ALL_COURSES";
+      //   console.log("value of course changes" + { course });
+      // }
 
-      if (selectedfeesvalue === "Exam Fee" && selectedCoursesvalue !== "") {
+      if (selectedfeesvalue === "Exam Fee" ) {
         level = "ALL_LEVEL";
-        console.log("value of Level changes" + { level });
       } else {
         level = selectedLevelvalue;
       }
-      if (selectedfeesvalue === "Application Fee") {
-        level = selectedLevelvalue;
+
+      console.log(level);
+      console.log(selectedLevelvalue);
+
+      if(selectedfeesvalue==="Exam Fee"){
+        //runs for Exam Fees
+        if(selectedNationalityvalue === "INDIAN" || selectedNationalityvalue ==="SAARC"){
+          setCalculatedfees(
+            (data[selectedfeesvalue][selectedNationalityvalue][course][level].amount) * 1.18 
+          );
+        }
+        else if(selectedNationalityvalue === "NRI" || selectedNationalityvalue === "FOREIGN"){
+          setCalculatedfees(
+            (data[selectedfeesvalue][selectedNationalityvalue][course][level].amount) * 1.28 
+          );
+        }
+      }
+      
+      else{
+        //runs for Application Fees
+
+        level = {selectedLevelvalue};
+        if(selectedNationalityvalue === "INDIAN" || selectedNationalityvalue ==="SAARC"){
+          setCalculatedfees(
+            (data[selectedfeesvalue][selectedNationalityvalue][course][selectedLevelvalue].amount) * 1.18 
+          );
+        }
+        else if(selectedNationalityvalue === "NRI" || selectedNationalityvalue === "FOREIGN"){
+          setCalculatedfees(
+            (data[selectedfeesvalue][selectedNationalityvalue][course][selectedLevelvalue].amount) * 1.28 
+          );
+        }
       }
 
-      setCalculatedfees(
-        data[selectedfeesvalue][selectedNationalityvalue][course][level].amount
-      );
       console.log(calculatedFees);
       return calculatedFees;
     }
