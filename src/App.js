@@ -8,6 +8,8 @@ var data = require("./data.json");
 
 const App = () => {
   var calculatedFees = 0;
+  var course = "ALL_COURSES";
+  var level = "ALL_LEVEL";
 
   const [selectedfeesvalue, setSelectedfeesvalue] = useState("Exam Fee");
   const [selectedNationalityvalue, setSelectedNationalityvalue] = useState("");
@@ -62,17 +64,19 @@ const App = () => {
     calculate();
   };
 
+
+
   function calculate() {
     console.log("chal chala");
-
-    var course = "ALL_COURSES";
-    var level = "ALL_LEVEL";
-
+    console.log(level);
+    console.log(course);
+    console.log(selectedfeesvalue);
+    console.log(selectedLevelvalue);
     if (
       selectedfeesvalue !== "" &&
       selectedNationalityvalue !== "" &&
       selectedCoursesvalue !== "" &&
-      selectedCoursesvalue !== ""
+      selectedLevelvalue !== ""
     ) {
       // if (coursesKey.indexOf(selectedCoursesvalue) !== -1) {
       //   course = "ALL_COURSES";
@@ -85,7 +89,9 @@ const App = () => {
         level = selectedLevelvalue;
       }
 
+      console.log(typeof(level))
       console.log(level);
+      console.log(typeof(selectedLevelvalue));
       console.log(selectedLevelvalue);
 
       if(selectedfeesvalue==="Exam Fee"){
@@ -113,6 +119,7 @@ const App = () => {
         }
         else if(selectedNationalityvalue === "NRI" || selectedNationalityvalue === "FOREIGN"){
           setCalculatedfees(
+            
             (data[selectedfeesvalue][selectedNationalityvalue][course][selectedLevelvalue].amount) * 1.28 
           );
         }
